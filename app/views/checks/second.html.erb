@@ -1,0 +1,32 @@
+<h1>Checks#second</h1>
+<p>Find me in app/views/checks/second.html.erb</p>
+
+<span>로또로 인생역전</span>
+
+<h2>내가 고른 숫자</h2>
+<%= @mynumber %>
+
+<h2>루비 컴퓨터가 고른 숫자</h2>
+<%= @sorted %>
+
+<h2>내가 맞춘 당첨 숫자</h2>
+<%= @lucky %>
+
+
+<h2>나의 최종 순위</h2>
+
+<span>맞춘 개수 : <%= @lucky.count %></span><br> 
+
+<% if @lucky.count == 1 || @lucky.count == 0  %>
+    꽝 입니다! 아쉽네요
+<% elsif @lucky.count == 2 %> 
+    2개 정도는 누구나 맞추는 거라 .. 
+<% elsif @lucky.count == 3 %> 
+    3개 너무 아쉽습니다.
+<% elsif @lucky.count == 4 %>
+    축하합니다. 3위 입니다.
+<% elsif @lucky.count == 5 %>
+    축하합니다. 2위 입니다. 
+<% else @lucky.count == 6 %>
+    축하합니다. 1위 입니다. 
+<% end %>
